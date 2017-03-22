@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11759" systemVersion="16D32" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Dictionary" representedClassName=".Dictionary" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toWord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" inverseName="toDictionary" inverseEntity="Word" syncable="YES"/>
+    </entity>
+    <entity name="Word" representedClassName=".Word" syncable="YES">
+        <attribute name="kind" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="word" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="fromOtherWord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" inverseName="toOtherWord" inverseEntity="Word" syncable="YES"/>
+        <relationship name="toDictionary" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Dictionary" inverseName="toWord" inverseEntity="Dictionary" syncable="YES"/>
+        <relationship name="toOtherWord" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Word" inverseName="fromOtherWord" inverseEntity="Word" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Dictionary" positionX="-360" positionY="44" width="128" height="73"/>
+        <element name="Word" positionX="-101" positionY="27" width="128" height="150"/>
+    </elements>
+</model>
